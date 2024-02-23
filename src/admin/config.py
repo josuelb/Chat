@@ -1,8 +1,14 @@
 from flask import Flask
-from flask_mysqldb import MySQL
+import mysql.connector
 
 app = Flask(__name__)
 
 # Required
-app.config["MYSQL_USER"] = "root"
-app.config["MSQL_PASSWORD"] = ""
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="chat_flask",
+)
+
+
